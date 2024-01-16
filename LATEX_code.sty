@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{fullpage}
+
+\title{Test 2}
+\author{Ondøej Lopatka}
+\date{January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Damped Harmonic Oscillator}
+
+The damped harmonic oscillator is a classical mechanical system that experiences damping, which is a dissipative force that opposes the motion of the oscillator. The equation of motion for a damped harmonic oscillator is typically given by:
+
+\begin{equation}
+    m\frac{d^2x}{dt^2}+c\frac{dx}{dt}+kx=0
+\label{eq1}
+\end{equation}
+
+where:
+\begin{align*}
+m & \text{ is the mass of the oscillator,} \\
+c & \text{ is the damping coefficient,} \\
+k & \text{ is the spring constant,} \\
+x & \text{ is the displacement from the equilibrium position.}
+\end{align*}
+
+
+\subsection{Obtaining the Solution for the Damped Harmonic Oscillator}
+
+The differential equation for the damped harmonic oscillator is given by:
+\[m \frac{d^2x}{dt^2} + c \frac{dx}{dt} + kx = 0\]
+
+Assume a solution of the form \( x(t) = e^{rt} \), where \( r \) is a complex number.
+
+Substitute this solution into the differential equation:
+\[m r^2 e^{rt} + c r e^{rt} + k e^{rt} = 0\]
+
+Factor out \( e^{rt} \):
+\[e^{rt} (mr^2 + cr + k) = 0\]
+
+For a nontrivial solution (where \( e^{rt} \neq 0 \)), the expression in the parentheses must be equal to zero:
+\[mr^2 + cr + k = 0\]
+
+This is a quadratic equation in \( r \). Solve for \( r \):
+\[r = \frac{-c \pm \sqrt{c^2 - 4mk}}{2m}\]
+
+The solutions to this quadratic equation yield two values of \( r \). Depending on the nature of the roots (real, complex, or repeated), we get different forms for the solution. If the roots are complex, the solution takes the form:
+\begin{equation}
+x(t) = A e^{-\frac{c}{2m}t} \cos(\omega_d t + \phi)
+\label{eq2}
+\end{equation}
+
+where:
+\begin{align*}
+A & \text{ is the amplitude,} \\
+\omega_d & = \sqrt{\omega_0^2 - \left(\frac{c}{2m}\right)^2} \text{ (damped angular frequency),} \\
+\omega_0 & = \sqrt{\frac{k}{m}} \text{ (natural angular frequency),} \\
+\phi & \text{ is the phase constant.}
+\end{align*}
+
+\subsection{Example solution}
+
+The solution to this differential equation \eqref{eq1} depends on the type of damping. One common form of solution \eqref{eq2} describes the exponentially decaying oscillatory motion of the damped harmonic oscillator (Figure \ref{fig:damped_harmonic_oscillator}).
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{damped_harmonic_oscillator_plot.png}
+  \caption{Damped Harmonic Oscillator Solution}
+  \label{fig:damped_harmonic_oscillator}
+\end{figure}
+
+\end{document}
